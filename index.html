@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Layout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+    
+        #slider {
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        }
+        .card {
+        scroll-snap-align: center;
+        flex: 0 0 auto;
+        }
+        .card img {
+        object-fit: cover;
+        }
+        .nav-button {
+        background-color: rgba(255, 255, 255, 0.9);
+         }
+
+         @media (max-width: 768px) {
+            .nav-button {
+                display: none;
+            }
+}
+
+    </style>
+</head>
+
+<body class="bg-[#E8F7F5]">
+
+    <nav class="flex items-center justify-between px-4 md:px-8 lg:px-16 py-4">
+       
+        <div class="flex-shrink-0">
+            <a href="#">
+                <svg width="72" height="40" viewBox="0 0 72 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M52.7901 31.6336L58.296 14.7058C58.7089 13.4651 58.9842 12.6105 60.0303 12.6105C60.9939 12.6105 61.2416 13.3549 61.8473 15.1469L67.601 31.6336H69.6382V31.992H62.2052V31.6336H64.6278L62.2602 24.6309H55.5706L53.3131 31.6336H55.6807V31.992H50.7529V31.6336H52.7901ZM58.819 14.5128L55.7082 24.2173H62.1226L58.8466 14.5128H58.819Z" fill="#101010"/>
+                    <path d="M43.1197 12.6105C46.0103 12.6105 47.3042 14.1544 48.1851 14.1544C49.0661 14.1544 48.8458 12.8862 49.6992 12.8862H49.7543V19.3926H49.6442C48.7908 19.3926 48.3778 17.766 47.9924 16.2772C47.4418 14.3198 45.5698 13.024 43.1747 13.024C39.4582 13.024 37.3935 16.2772 37.3935 22.4253C37.3935 28.5733 39.3757 31.8266 43.1197 31.8266C47.4969 31.8266 49.3964 29.0145 49.7543 25.8439L50.1948 25.9266C49.947 28.4355 48.3778 32.2677 43.0371 32.2677C38.1093 32.2677 34.2276 28.1874 34.2276 22.4253C34.2276 16.6632 38.2745 12.6105 43.1197 12.6105Z" fill="#101010"/>
+                    <path d="M26.3137 22.7286L31.4618 13.2721H29.0116V12.9137H34.2147V13.2721H31.9848L26.3963 23.5005V31.6336H29.1768V31.992H20.8629V31.6336H23.6434V23.5005L18.5504 13.2721H16.0452V12.9137H24.2766V13.2721H21.6612L26.3137 22.7286Z" fill="#101010"/>
+                    <path d="M13.7792 19.0618H13.6415C12.8982 19.0618 12.5404 17.8763 12.1825 16.4978C11.742 14.8436 10.6408 13.024 7.86034 13.024C5.9608 13.024 3.89608 14.1819 3.89608 16.167C3.89608 18.1796 5.74056 19.2272 8.24575 20.137L9.84247 20.716C13.0634 21.8739 15.1281 23.5005 15.1281 26.8089C15.1281 30.0621 12.678 32.2677 9.18176 32.2677C5.98833 32.2677 4.7495 30.6411 3.92361 30.6411C3.0702 30.6411 3.31796 32.1023 2.49208 32.1023H2.38196V25.5958H2.49208C3.12526 25.5958 3.59326 26.3953 4.06126 28.3528C4.61185 30.5859 6.40127 31.8541 9.29188 31.8541C11.3566 31.8541 13.8893 30.8616 13.8893 28.2701C13.8893 26.1472 12.0724 24.879 9.20929 23.8313L7.47493 23.1972C4.25397 22.0117 2.73984 19.944 2.73984 17.3249C2.73984 14.6782 5.0248 12.6105 7.9154 12.6105C10.5858 12.6105 11.6319 14.2095 12.2926 14.2095C12.9808 14.2095 12.9258 12.9413 13.7241 12.9413H13.7792V19.0618Z" fill="#101010"/>
+                    <path d="M69.6462 37.7056H68.4515V37.3845H69.6462V37.7056Z" fill="#101010"/>
+                    <path d="M65.479 40C65.1842 40 64.9567 39.7773 64.9567 39.508C64.9567 39.3215 65.0756 39.192 65.2411 39.192C65.3808 39.192 65.4738 39.2801 65.4738 39.4147C65.4738 39.6116 65.2256 39.6167 65.2256 39.7721C65.2256 39.8757 65.3239 39.943 65.4635 39.943C65.6497 39.943 65.8152 39.8602 65.8152 39.2335V39.1817C65.8152 38.902 65.7738 38.7673 65.6652 38.4462L65.0342 36.5454H64.7291V36.4781H65.9238V36.5454H65.5359L66.1617 38.6016H66.1669L66.7719 36.5454H66.4099V36.4781H67.1909V36.5454H66.865L66.2703 38.555C66.2186 38.7259 66.2134 38.9175 66.2134 39.1454C66.2134 39.6841 65.9393 40 65.479 40Z" fill="#101010"/>
+                    <path d="M60.7373 38.7052V38.6379H61.1252V36.5454H60.7425V36.4781H61.5751V37.1203H61.5803C61.6786 36.8044 61.8854 36.4315 62.3095 36.4315C62.6302 36.4315 62.9353 36.5817 62.9508 37.0944H62.956C63.0646 36.7785 63.2714 36.4315 63.68 36.4315C63.9903 36.4315 64.342 36.5661 64.342 37.1566V38.6379H64.7299V38.7052H63.499V38.6379H63.8765V37.2861C63.8765 36.8096 63.8559 36.5144 63.6024 36.5144C63.1835 36.5144 62.9663 37.1566 62.9663 37.4259V38.6379H63.3439V38.7052H62.1233V38.6379H62.5009V37.2861C62.5009 36.8096 62.4802 36.5144 62.2319 36.5144C61.8078 36.5144 61.5906 37.1721 61.5906 37.4207V38.6379H61.9682V38.7052H60.7373Z" fill="#101010"/>
+                    <path d="M60.3614 37.4829H58.903V37.602C58.903 38.2598 59.0633 38.6793 59.5184 38.6793C59.8339 38.6793 60.1649 38.4928 60.2528 38.0267L60.3252 38.0422C60.2321 38.5239 59.8804 38.757 59.4822 38.757C58.8409 38.757 58.3703 38.2753 58.3703 37.602C58.3703 36.9442 58.8668 36.4159 59.4202 36.4159C59.896 36.4159 60.4183 36.7681 60.3614 37.4829ZM59.4202 36.4729C59.0943 36.4729 58.9133 36.794 58.903 37.4155H59.8804C59.9166 36.7422 59.7098 36.4729 59.4202 36.4729Z" fill="#101010"/>
+                    <path d="M57.2229 37.0219C57.2178 36.9546 57.2074 36.8199 57.2074 36.6956V35.09H56.7937V35.0227H57.6729V38.6378H58.0608V38.7052H57.2229V38.151H57.2126C57.1247 38.4255 56.9126 38.757 56.5351 38.757C56.0076 38.757 55.5421 38.2287 55.5421 37.5864C55.5421 36.9701 56.0076 36.4159 56.5351 36.4159C56.9126 36.4159 57.1247 36.7474 57.2126 37.0219H57.2229ZM56.08 37.5864C56.08 38.1458 56.2248 38.6793 56.5816 38.6793C57.0109 38.6793 57.2333 38.0629 57.2333 37.5864C57.2333 37.11 57.0109 36.4936 56.5816 36.4936C56.2248 36.4936 56.08 37.0271 56.08 37.5864Z" fill="#101010"/>
+                    <path d="M54.4074 37.4725V37.2187C54.4074 36.5972 54.2419 36.4833 53.942 36.4833C53.7144 36.4833 53.5127 36.5661 53.5127 36.6853C53.5127 36.7992 53.7351 36.7992 53.7351 37.0064C53.7351 37.1462 53.6317 37.2446 53.492 37.2446C53.3472 37.2446 53.2179 37.1255 53.2179 36.9442C53.2179 36.6542 53.5541 36.4159 53.9678 36.4159C54.4385 36.4159 54.8729 36.592 54.8677 37.2757L54.8626 38.3789C54.8626 38.5809 54.9039 38.6637 55.0177 38.6637C55.1211 38.6637 55.2453 38.5809 55.2815 38.3582L55.3487 38.3685C55.3022 38.6327 55.1418 38.7518 54.9298 38.7518C54.6867 38.7518 54.4281 38.6534 54.4385 38.2132H54.4281C54.3506 38.4928 54.1437 38.757 53.823 38.757C53.4145 38.757 53.0421 38.5498 53.0421 38.2028C53.0421 37.7367 53.6886 37.6227 54.4074 37.4725ZM54.4126 37.5398C53.7144 37.6693 53.5748 37.6952 53.5748 38.2028C53.5748 38.5032 53.6627 38.6793 53.8644 38.6793C54.1333 38.6793 54.4126 38.3996 54.4126 37.7315V37.5398Z" fill="#101010"/>
+                    <path d="M51.267 37.5968C51.267 38.2649 51.4273 38.6793 51.8358 38.6793C52.172 38.6793 52.4409 38.4928 52.534 38.0267L52.6064 38.0422C52.5082 38.5239 52.2134 38.757 51.81 38.757C51.1997 38.757 50.7343 38.2753 50.7343 37.602C50.7343 37.0012 51.1583 36.4159 51.8772 36.4159C52.2703 36.4159 52.6064 36.6386 52.6064 36.9857C52.6064 37.1566 52.4823 37.3068 52.3168 37.3068C52.1668 37.3068 52.0582 37.2084 52.0582 37.0582C52.0582 36.9494 52.1151 36.8717 52.1927 36.8199C52.2651 36.7681 52.3065 36.7422 52.3065 36.6904C52.3065 36.5765 52.1151 36.4833 51.8979 36.4833C51.3238 36.4833 51.267 37.1359 51.267 37.5968Z" fill="#101010"/>
+                    <path d="M47.4856 38.6378L48.52 35.4578C48.5975 35.2247 48.6493 35.0641 48.8458 35.0641C49.0268 35.0641 49.0733 35.204 49.1871 35.5406L50.268 38.6378H50.6507V38.7052H49.2543V38.6378H49.7095L49.2647 37.3223H48.008L47.5839 38.6378H48.0286V38.7052H47.1029V38.6378H47.4856ZM48.6182 35.4215L48.0338 37.2446H49.2388L48.6234 35.4215H48.6182Z" fill="#101010"/>
+                    <path d="M45.4459 38.757C45.1046 38.757 44.8563 38.5964 44.8563 38.151V36.5454H44.4116V36.4781H44.8563V36.1311C45.0322 36.0068 45.1666 35.8669 45.2753 35.6857H45.3218V36.4781H45.989V36.5454H45.3218V38.1976C45.3218 38.4877 45.3683 38.6689 45.5597 38.6689C45.7511 38.6689 45.9165 38.498 45.989 38.2131L46.051 38.2287C45.9372 38.6741 45.6631 38.757 45.4459 38.757Z" fill="#101010"/>
+                    <path d="M41.6624 38.7052V38.6379H42.0503V36.5454H41.6676V36.4781H42.4951V37.1255H42.5003C42.6037 36.8096 42.8261 36.4315 43.245 36.4315C43.7053 36.4315 43.938 36.7215 43.938 37.2239V38.6379H44.3259V38.7052H43.095V38.6379H43.4725V37.343C43.4725 36.8614 43.4829 36.5144 43.1778 36.5144C42.7537 36.5144 42.5158 37.1514 42.5158 37.4466V38.6379H42.8933V38.7052H41.6624Z" fill="#101010"/>
+                    <path d="M41.2865 37.4829H39.8281V37.602C39.8281 38.2598 39.9884 38.6793 40.4436 38.6793C40.759 38.6793 41.09 38.4928 41.1779 38.0267L41.2503 38.0422C41.1573 38.5239 40.8056 38.757 40.4074 38.757C39.7661 38.757 39.2954 38.2753 39.2954 37.602C39.2954 36.9442 39.7919 36.4159 40.3453 36.4159C40.8211 36.4159 41.3434 36.7681 41.2865 37.4829ZM40.3453 36.4729C40.0195 36.4729 39.8385 36.794 39.8281 37.4155H40.8056C40.8418 36.7422 40.6349 36.4729 40.3453 36.4729Z" fill="#101010"/>
+                    <path d="M38.3958 38.757C38.0544 38.757 37.8062 38.5964 37.8062 38.151V36.5454H37.3614V36.4781H37.8062V36.1311C37.982 36.0068 38.1165 35.8669 38.2251 35.6857H38.2716V36.4781H38.9388V36.5454H38.2716V38.1976C38.2716 38.4877 38.3182 38.6689 38.5095 38.6689C38.7009 38.6689 38.8664 38.498 38.9388 38.2131L39.0009 38.2287C38.8871 38.6741 38.613 38.757 38.3958 38.757Z" fill="#101010"/>
+                    <path d="M34.6123 38.7052V38.6379H35.0002V36.5454H34.6174V36.4781H35.4449V37.1255H35.4501C35.5535 36.8096 35.7759 36.4315 36.1948 36.4315C36.6551 36.4315 36.8878 36.7215 36.8878 37.2239V38.6379H37.2757V38.7052H36.0448V38.6379H36.4224V37.343C36.4224 36.8614 36.4327 36.5144 36.1276 36.5144C35.7035 36.5144 35.4656 37.1514 35.4656 37.4466V38.6379H35.8431V38.7052H34.6123Z" fill="#101010"/>
+                    <path d="M34.2404 37.5865C34.2404 38.1976 33.7542 38.757 33.1595 38.757C32.5647 38.757 32.0786 38.1976 32.0786 37.5865C32.0786 36.9753 32.5647 36.4159 33.1595 36.4159C33.7542 36.4159 34.2404 36.9753 34.2404 37.5865ZM32.6165 37.5865C32.6165 38.2701 32.7199 38.7 33.1595 38.7C33.5991 38.7 33.7025 38.2701 33.7025 37.5865C33.7025 36.9028 33.5991 36.4729 33.1595 36.4729C32.7199 36.4729 32.6165 36.9028 32.6165 37.5865Z" fill="#101010"/>
+                    <path d="M30.2708 35.0641C30.8139 35.0641 31.0569 35.3542 31.2224 35.3542C31.3879 35.3542 31.3466 35.1159 31.5069 35.1159H31.5172V36.3382H31.4965C31.3362 36.3382 31.2586 36.0327 31.1862 35.753C31.0828 35.3853 30.7311 35.1418 30.2812 35.1418C29.583 35.1418 29.1951 35.753 29.1951 36.908C29.1951 38.0629 29.5675 38.6741 30.2708 38.6741C31.0931 38.6741 31.45 38.1458 31.5172 37.5502L31.6 37.5657C31.5534 38.037 31.2586 38.757 30.2553 38.757C29.3296 38.757 28.6004 37.9904 28.6004 36.908C28.6004 35.8255 29.3606 35.0641 30.2708 35.0641Z" fill="#101010"/>
+                    <path d="M26.122 36.4781V37.1255H26.1272C26.2048 36.851 26.3909 36.447 26.7943 36.4418C27.0271 36.4418 27.2391 36.5869 27.2391 36.8717C27.2391 37.0892 27.0943 37.2135 26.9443 37.2135C26.8099 37.2135 26.6961 37.1255 26.6961 36.9805C26.6961 36.8614 26.7426 36.794 26.8254 36.7422C26.8874 36.7008 26.9133 36.6645 26.9133 36.6179C26.9133 36.5558 26.8564 36.5143 26.7581 36.5143C26.3806 36.5143 26.1479 37.0892 26.1479 37.5088V38.6378H26.6702V38.7052H25.2945V38.6378H25.6824V36.5454H25.2997V36.4781H26.122Z" fill="#101010"/>
+                    <path d="M23.2711 36.4781V37.9179C23.2711 38.4307 23.2866 38.6638 23.5504 38.6638C23.9848 38.6638 24.202 38.0371 24.202 37.7263V36.5454H23.809V36.4781H24.6675V38.6379H25.0398V38.7052H24.2175V38.063H24.2124C24.1141 38.3737 23.8969 38.757 23.478 38.757C23.1263 38.757 22.8056 38.6223 22.8056 38.0112V36.5454H22.4178V36.4781H23.2711Z" fill="#101010"/>
+                    <path d="M22.1803 37.5865C22.1803 38.1976 21.6942 38.757 21.0994 38.757C20.5047 38.757 20.0186 38.1976 20.0186 37.5865C20.0186 36.9753 20.5047 36.4159 21.0994 36.4159C21.6942 36.4159 22.1803 36.9753 22.1803 37.5865ZM20.5564 37.5865C20.5564 38.2701 20.6598 38.7 21.0994 38.7C21.539 38.7 21.6425 38.2701 21.6425 37.5865C21.6425 36.9028 21.539 36.4729 21.0994 36.4729C20.6598 36.4729 20.5564 36.9028 20.5564 37.5865Z" fill="#101010"/>
+                    <path d="M18.8617 36.9649L19.8288 35.1885H19.3685V35.1211H20.346V35.1885H19.9271L18.8772 37.11V38.6379H19.3996V38.7052H17.8377V38.6379H18.36V37.11L17.4033 35.1885H16.9326V35.1211H18.479V35.1885H17.9877L18.8617 36.9649Z" fill="#101010"/>
+                    <path d="M15.2757 38.757C14.9343 38.757 14.6861 38.5964 14.6861 38.151V36.5454H14.2413V36.4781H14.6861V36.1311C14.8619 36.0068 14.9964 35.8669 15.105 35.6857H15.1515V36.4781H15.8187V36.5454H15.1515V38.1976C15.1515 38.4877 15.1981 38.6689 15.3894 38.6689C15.5808 38.6689 15.7463 38.498 15.8187 38.2131L15.8808 38.2287C15.767 38.6741 15.4929 38.757 15.2757 38.757Z" fill="#101010"/>
+                    <path d="M13.0116 36.4781V37.1255H13.0168C13.0943 36.851 13.2805 36.447 13.6839 36.4418C13.9166 36.4418 14.1287 36.5869 14.1287 36.8717C14.1287 37.0892 13.9839 37.2135 13.8339 37.2135C13.6994 37.2135 13.5856 37.1255 13.5856 36.9805C13.5856 36.8614 13.6322 36.794 13.7149 36.7422C13.777 36.7008 13.8029 36.6645 13.8029 36.6179C13.8029 36.5558 13.746 36.5143 13.6477 36.5143C13.2702 36.5143 13.0374 37.0892 13.0374 37.5088V38.6378H13.5598V38.7052H12.1841V38.6378H12.572V36.5454H12.1893V36.4781H13.0116Z" fill="#101010"/>
+                    <path d="M11.1167 37.4725V37.2187C11.1167 36.5972 10.9512 36.4833 10.6512 36.4833C10.4236 36.4833 10.2219 36.5661 10.2219 36.6853C10.2219 36.7992 10.4443 36.7992 10.4443 37.0064C10.4443 37.1462 10.3409 37.2446 10.2013 37.2446C10.0565 37.2446 9.92716 37.1255 9.92716 36.9442C9.92716 36.6542 10.2633 36.4159 10.6771 36.4159C11.1477 36.4159 11.5821 36.592 11.5769 37.2757L11.5718 38.3789C11.5718 38.5809 11.6131 38.6637 11.7269 38.6637C11.8304 38.6637 11.9545 38.5809 11.9907 38.3582L12.0579 38.3685C12.0114 38.6327 11.851 38.7518 11.639 38.7518C11.3959 38.7518 11.1373 38.6534 11.1477 38.2132H11.1373C11.0598 38.4928 10.8529 38.757 10.5323 38.757C10.1237 38.757 9.75132 38.5498 9.75132 38.2028C9.75132 37.7367 10.3978 37.6227 11.1167 37.4725ZM11.1218 37.5398C10.4236 37.6693 10.284 37.6952 10.284 38.2028C10.284 38.5032 10.3719 38.6793 10.5736 38.6793C10.8426 38.6793 11.1218 38.3996 11.1218 37.7315V37.5398Z" fill="#101010"/>
+                    <path d="M8.85681 38.757C8.51548 38.757 8.26724 38.5964 8.26724 38.151V36.5454H7.82247V36.4781H8.26724V36.1311C8.44308 36.0068 8.57754 35.8669 8.68615 35.6857H8.73269V36.4781H9.39985V36.5454H8.73269V38.1976C8.73269 38.4877 8.77924 38.6689 8.97059 38.6689C9.16195 38.6689 9.32744 38.498 9.39985 38.2131L9.46191 38.2287C9.34813 38.6741 9.07403 38.757 8.85681 38.757Z" fill="#101010"/>
+                    <path d="M7.30561 36.2761H7.27975C7.14012 36.2761 7.07288 36.0534 7.00565 35.7944C6.9229 35.4837 6.71603 35.1418 6.19369 35.1418C5.83684 35.1418 5.44896 35.3594 5.44896 35.7323C5.44896 36.1104 5.79546 36.3072 6.26609 36.4781L6.56605 36.5868C7.17115 36.8044 7.55903 37.11 7.55903 37.7315C7.55903 38.3426 7.09874 38.757 6.44193 38.757C5.84201 38.757 5.60928 38.4514 5.45413 38.4514C5.29381 38.4514 5.34035 38.7259 5.1852 38.7259H5.16451V37.5036H5.1852C5.30415 37.5036 5.39207 37.6538 5.47999 38.0215C5.58342 38.441 5.91959 38.6793 6.46262 38.6793C6.8505 38.6793 7.3263 38.4928 7.3263 38.006C7.3263 37.6072 6.98496 37.3689 6.4471 37.1721L6.12128 37.053C5.51619 36.8303 5.23174 36.4418 5.23174 35.9498C5.23174 35.4526 5.661 35.0641 6.20403 35.0641C6.70569 35.0641 6.90222 35.3645 7.02634 35.3645C7.15563 35.3645 7.14529 35.1263 7.29527 35.1263H7.30561V36.2761Z" fill="#101010"/>
+                    <path d="M3.54843 37.7056H2.35376V37.3845H3.54843V37.7056Z" fill="#101010"/>
+                    <ellipse cx="58.6262" cy="7.52987" rx="3.58043" ry="3.58566" fill="#49B5A5"/>
+                    <ellipse cx="65.7871" cy="3.58566" rx="3.58043" ry="3.58566" fill="#F2CF59"/>
+                    <ellipse cx="65.6478" cy="11.753" rx="3.58043" ry="3.58566" fill="#FB8E7E"/>
+                </svg>
+            </a>
+        </div>
+
+       
+        <ul class="hidden md:flex space-x-12">
+            <li>
+                <a href="#" class="text-gray-500 hover:text-gray-900">Menu</a>
+            </li>
+            <li>
+                <a href="#" class="text-gray-700 hover:text-gray-900 font-bold">Menu</a>
+            </li>
+            <li>
+                <a href="#" class="text-gray-500 hover:text-gray-900">Menu</a>
+            </li>
+            <li>
+                <a href="#" class="text-gray-500 hover:text-gray-900">Menu</a>
+            </li>
+        </ul>
+
+       
+        <div class="flex-shrink-0" id="btn-login">
+            <a href="#" class="bg-[#49B5A5] text-white py-2 px-6 rounded-md font-semibold hover:bg-[#3a9587] hidden md:block ">
+                Login
+            </a>
+        </div>
+
+        
+       
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M4 5h16v2H4V5zm0 6h16v2H4v-2zm0 6h16v2H4v-2z" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden px-4 py-2 bg-white shadow-md">
+        <ul class="space-y-2">
+             <li>
+                <a href="#" class="block text-gray-700 hover:text-gray-900">Login</a>
+            </li>
+            <li>
+                <a href="#" class="block text-gray-700 hover:text-gray-900">Home</a>
+            </li>
+            <li>
+                <a href="#" class="block text-gray-700 hover:text-gray-900">About</a>
+            </li>
+            <li>
+                <a href="#" class="block text-gray-700 hover:text-gray-900">Services</a>
+            </li>
+            <li>
+                <a href="#" class="block text-gray-700 hover:text-gray-900">Contact</a>
+            </li>
+        </ul>
+    </div>
+
+   <section class="py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+            Buat kamu yang belum jadi member,<br>
+            hari ini ada Kesempatan Eksklusif...
+            </h2>
+            <p class="text-base md:text-lg lg:text-xl mb-4">
+            Dapatkan <span class="font-semibold"> Diskon 70% Course Affiliate ini jadi hanya 99 Ribu</span> dengan<br>
+            ambil <span class="font-semibold">bareng paket Course IG</span> sekaligus (<span class="italic">Akses Seumur Hidup</span>)
+            </p>
+        </div>
+    </section>
+
+    <section class="py-0">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg mb-4">Course IG aksesnya seumur hidup, plus kamu akan dapetin ini semua ini:</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="bg-white border border-[#49B5A5] rounded-lg p-6 shadow-lg w-full sm:w-2/3 lg:w-2/5">
+                    <ul>
+                        <li class="flex items-start space-x-2">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 29.3333C23.3333 29.3333 29.3333 23.3333 29.3333 16C29.3333 8.66663 23.3333 2.66663 16 2.66663C8.66663 2.66663 2.66663 8.66663 2.66663 16C2.66663 23.3333 8.66663 29.3333 16 29.3333Z" stroke="#49B5A5" stroke-width="3" stroke-linejoin="round"/>
+                                <path d="M10.3334 16L14.1067 19.7734L21.6667 12.2267" stroke="#49B5A5" stroke-width="3" stroke-linejoin="round"/>
+                            </svg>
+                            <p class="text-left flex-1">50+ Video Materi yang akan terus diupdate seiring ada Strategi/Fitur BARU <span class="text-[#49B5A5] font-semibold">tanpa perlu bayar lagi</span></p>
+                        </li>
+                    </ul>
+
+                    <ul class="py-3">
+                        <li class="flex items-start space-x-2">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 29.3333C23.3333 29.3333 29.3333 23.3333 29.3333 16C29.3333 8.66663 23.3333 2.66663 16 2.66663C8.66663 2.66663 2.66663 8.66663 2.66663 16C2.66663 23.3333 8.66663 29.3333 16 29.3333Z" stroke="#49B5A5" stroke-width="3" stroke-linejoin="round"/>
+                                <path d="M10.3334 16L14.1067 19.7734L21.6667 12.2267" stroke="#49B5A5" stroke-width="3" stroke-linejoin="round"/>
+                            </svg>
+                            <p class="text-left flex-1">Kesempatan Eksklusif <span class="text-[#49B5A5] font-semibold">DIREVIEW AKUNMU</span> oleh team Expert di Live Review Akun 1-2x/bulan</p>
+                        </li>
+                    </ul>
+
+                    <ul class="py-3">
+                        <li class="flex items-start space-x-2">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 29.3333C23.3333 29.3333 29.3333 23.3333 29.3333 16C29.3333 8.66663 23.3333 2.66663 16 2.66663C8.66663 2.66663 2.66663 8.66663 2.66663 16C2.66663 23.3333 8.66663 29.3333 16 29.3333Z" stroke="#49B5A5" stroke-width="3" stroke-linejoin="round"/>
+                                <path d="M10.3334 16L14.1067 19.7734L21.6667 12.2267" stroke="#49B5A5" stroke-width="3" stroke-linejoin="round"/>
+                            </svg>
+                            <p class="text-left flex-1">Akses <span class="text-[#49B5A5] font-semibold">Tanya2 di Exclusive Community </span> (bisa bertanya, dibimbing langsung + networking)</p>
+                        </li>
+                    </ul>
+
+                    <ul class="py-3">
+                        <li class="flex items-start space-x-2">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 29.3333C23.3333 29.3333 29.3333 23.3333 29.3333 16C29.3333 8.66663 23.3333 2.66663 16 2.66663C8.66663 2.66663 2.66663 8.66663 2.66663 16C2.66663 23.3333 8.66663 29.3333 16 29.3333Z" stroke="#49B5A5" stroke-width="3" stroke-linejoin="round"/>
+                                <path d="M10.3334 16L14.1067 19.7734L21.6667 12.2267" stroke="#49B5A5" stroke-width="3" stroke-linejoin="round"/>
+                            </svg>
+                            <p class="text-left flex-1">Akses ke <span class="text-[#49B5A5] font-semibold">Info Tren Konten yang lagi Naik</span> yang diupdate SETIAP PAGI, supaya kamu ga ketinggalan</p>
+                        </li>
+                    </ul>
+
+                    <ul class="py-3">
+                        <li class="flex items-start space-x-2">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 29.3333C23.3333 29.3333 29.3333 23.3333 29.3333 16C29.3333 8.66663 23.3333 2.66663 16 2.66663C8.66663 2.66663 2.66663 8.66663 2.66663 16C2.66663 23.3333 8.66663 29.3333 16 29.3333Z" stroke="#49B5A5" stroke-width="3" stroke-linejoin="round"/>
+                                <path d="M10.3334 16L14.1067 19.7734L21.6667 12.2267" stroke="#49B5A5" stroke-width="3" stroke-linejoin="round"/>
+                            </svg>
+                            <p class="text-left flex-1">Bonus Modul <span class="text-[#49B5A5] font-semibold">Editing Modal HP</span> Buat Pemula  (Design + Video)</p>
+                        </li>
+                    </ul>
+
+                    <ul class="py-3">
+                        <li class="flex items-start space-x-2">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 29.3333C23.3333 29.3333 29.3333 23.3333 29.3333 16C29.3333 8.66663 23.3333 2.66663 16 2.66663C8.66663 2.66663 2.66663 8.66663 2.66663 16C2.66663 23.3333 8.66663 29.3333 16 29.3333Z" stroke="#49B5A5" stroke-width="3" stroke-linejoin="round"/>
+                                <path d="M10.3334 16L14.1067 19.7734L21.6667 12.2267" stroke="#49B5A5" stroke-width="3" stroke-linejoin="round"/>
+                            </svg>
+                            <p class="text-left flex-1">Bonus Module Editing (Design + Video)</p>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-8">
+        <div class="container mx-auto text-center">
+            <img src="assets/image 1.png" alt="Descriptive Alt Text" class="mx-auto">
+
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+                Spesial buat kamu yang beli Course Affiliate<br> tidak perlu bayar senilai :
+            </h2>
+            <p class="text-4xl font-bold">
+                <span class="line-through text-gray-500">Rp 298,000</span>
+            </p>
+        </div>
+    </section>
+
+    <section class="py-8">
+        <div class="w-[90%] max-w-xl mx-auto bg-white rounded-[12px] shadow-lg p-6 text-center">
+            <h2 class="text-lg font-semibold mb-1">Cukup tambah</h2>
+            <p class="text-2xl font-bold text-[#FB8E7E] font-semibold mb-4">Rp 99,000</p>
+            <p class="text-sm text-gray-600 mb-6 font-semibold">
+                Sudah dapat <span class="text-[#49B5A5] font-semibold">Akses Seumur Hidup</span> ke 2 Course (IG + Affiliate)
+            </p>
+            <button class="w-full max-w-[400px] bg-[#F2CF59] text-black font-semibold py-2 px-4 rounded-full mb-4 mx-auto">
+                Ambil Penawaran Spesial! (397K)
+            </button>
+            <div class="flex gap-2 justify-center mb-4">
+                <button class="w-[48%] max-w-[200px] bg-white border border-[#49B5A5] text-[#49B5A5] text-xs py-2 px-4 rounded-full">
+                    Course afiliete saja (298k)
+                </button>
+                <button class="w-[48%] max-w-[200px] bg-white border border-[#49B5A5] text-[#49B5A5] text-xs py-2 px-4 rounded-full">
+                    Course SYCA saja (298k)
+                </button>
+            </div>
+            <div class="flex items-center justify-center gap-4">
+                <p class="text-sm text-gray-600 font-semibold mb-2 md:mb-0">Segera berakhir dalam:</p>
+                <div class="flex items-center gap-4">
+                    
+                    <div class="flex items-center">
+                        <div class="relative w-8 h-8">
+                            <svg class="absolute top-0 left-0 w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                <circle class="text-gray-200" stroke-width="6" stroke="currentColor" fill="none" cx="50" cy="50" r="45"/>
+                                <circle id="hours-circle" class="text-green-500" stroke-width="6" stroke="currentColor" fill="none" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="283"/>
+                            </svg>
+                        </div>
+                        <div class="ml-2 text-center">
+                            <p id="hours" class="text-xs font-semibold text-gray-800">00</p>
+                            <p class="text-xs text-gray-600">Jam</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="relative w-8 h-8">
+                            <svg class="absolute top-0 left-0 w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                <circle class="text-gray-200" stroke-width="6" stroke="currentColor" fill="none" cx="50" cy="50" r="45"/>
+                                <circle id="minutes-circle" class="text-[#F2CF59]" stroke-width="6" stroke="currentColor" fill="none" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="283"/>
+                            </svg>
+                        </div>
+                        <div class="ml-2 text-center">
+                            <p id="minutes" class="text-xs font-semibold text-gray-800">00</p>
+                            <p class="text-xs text-gray-600">Menit</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <div class="relative w-8 h-8">
+                            <svg class="absolute top-0 left-0 w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                <circle class="text-gray-200" stroke-width="6" stroke="currentColor" fill="none" cx="50" cy="50" r="45"/>
+                                <circle id="seconds-circle" class="text-[#FB8E7E]" stroke-width="6" stroke="currentColor" fill="none" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="283"/>
+                            </svg>
+                        </div>
+                        <div class="ml-2 text-center">
+                            <p id="seconds" class="text-xs font-semibold text-gray-800">00</p>
+                            <p class="text-xs text-gray-600">Detik</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-8">
+        <p class="text-lg md:text-xl lg:text-2xl mb-4 text-center font-semibold">
+            Ini beberapa Perubahan Luar Biasa dari Member2 yang sudah Gabung...
+        </p>
+        <div class="w-[90%] max-w-xl mx-auto relative">
+            
+            <div id="slider" class="relative flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4 pl-6">
+                
+                <div class="snap-center shrink-0 w-[90%] sm:w-[48%] md:w-[45%] lg:w-[40%] bg-white rounded-[12px] shadow-lg p-4">
+                    <div class="flex flex-col items-start">
+                        <div class="flex items-center mb-2">
+                            <div class="w-10 h-10 rounded-full bg-gray-300"></div>
+                            <div class="ml-4">
+                                <h3 class="text-base font-semibold text-gray-800">Member Name</h3>
+                                <p class="text-sm text-gray-500">@username</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-3">
+                            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 .288l2.833 8.718h9.167L17.417 14.4l2.833 8.718L12 18.576l-8.25 4.542L6.583 14.4.333 9.006h9.167z"></path>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 .288l2.833 8.718h9.167L17.417 14.4l2.833 8.718L12 18.576l-8.25 4.542L6.583 14.4.333 9.006h9.167z"></path>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 .288l2.833 8.718h9.167L17.417 14.4l2.833 8.718L12 18.576l-8.25 4.542L6.583 14.4.333 9.006h9.167z"></path>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 .288l2.833 8.718h9.167L17.417 14.4l2.833 8.718L12 18.576l-8.25 4.542L6.583 14.4.333 9.006h9.167z"></path>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 .288l2.833 8.718h9.167L17.417 14.4l2.833 8.718L12 18.576l-8.25 4.542L6.583 14.4.333 9.006h9.167z"></path>
+                            </svg>
+
+                        </div>
+                        <p class="text-sm text-gray-600 mb-4">
+                            Dulu views mentok di ratusan, setelah ikut SYCA pertama kali pecah telor 600,000 views, dan setelah itu panen sampai Jutaan...
+                        </p>
+                        <a href="#" class="text-sm font-semibold text-teal-600">Lihat selanjutnya</a>
+
+                        <div class="bg-gray-100 w-[180px] h-[300px] rounded-md  mx-auto mt-2"></div>
+                    </div>
+                </div>
+
+                <div class="snap-center shrink-0 w-[90%] sm:w-[48%] md:w-[45%] lg:w-[40%] bg-white rounded-[12px] shadow-lg p-4">
+                    <div class="flex flex-col items-start">
+                        <div class="flex items-center mb-2">
+                            <div class="w-10 h-10 rounded-full bg-gray-300"></div>
+                            <div class="ml-4">
+                                <h3 class="text-base font-semibold text-gray-800">Member Name</h3>
+                                <p class="text-sm text-gray-500">@username</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-3">
+                            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 .288l2.833 8.718h9.167L17.417 14.4l2.833 8.718L12 18.576l-8.25 4.542L6.583 14.4.333 9.006h9.167z"></path>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 .288l2.833 8.718h9.167L17.417 14.4l2.833 8.718L12 18.576l-8.25 4.542L6.583 14.4.333 9.006h9.167z"></path>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 .288l2.833 8.718h9.167L17.417 14.4l2.833 8.718L12 18.576l-8.25 4.542L6.583 14.4.333 9.006h9.167z"></path>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 .288l2.833 8.718h9.167L17.417 14.4l2.833 8.718L12 18.576l-8.25 4.542L6.583 14.4.333 9.006h9.167z"></path>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 .288l2.833 8.718h9.167L17.417 14.4l2.833 8.718L12 18.576l-8.25 4.542L6.583 14.4.333 9.006h9.167z"></path>
+                            </svg>
+
+                        </div>
+                        <p class="text-sm text-gray-600 mb-4">
+                            Dulu views mentok di ratusan, setelah ikut SYCA pertama kali pecah telor 600,000 views, dan setelah itu panen sampai Jutaan...
+                        </p>
+                        <a href="#" class="text-sm font-semibold text-teal-600">Lihat selanjutnya</a>
+
+                        <div class="bg-gray-100 w-[180px] h-[300px] rounded-md  mx-auto mt-2"></div>
+                    </div>
+                </div>
+
+                <div class="snap-center shrink-0 w-[90%] sm:w-[48%] md:w-[45%] lg:w-[40%] bg-white rounded-[12px] shadow-lg p-4">
+                    <div class="flex flex-col items-start">
+                        <div class="flex items-center mb-2">
+                            <div class="w-10 h-10 rounded-full bg-gray-300"></div>
+                            <div class="ml-4">
+                                <h3 class="text-base font-semibold text-gray-800">Member Name</h3>
+                                <p class="text-sm text-gray-500">@username</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-3">
+                            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 .288l2.833 8.718h9.167L17.417 14.4l2.833 8.718L12 18.576l-8.25 4.542L6.583 14.4.333 9.006h9.167z"></path>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 .288l2.833 8.718h9.167L17.417 14.4l2.833 8.718L12 18.576l-8.25 4.542L6.583 14.4.333 9.006h9.167z"></path>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 .288l2.833 8.718h9.167L17.417 14.4l2.833 8.718L12 18.576l-8.25 4.542L6.583 14.4.333 9.006h9.167z"></path>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 .288l2.833 8.718h9.167L17.417 14.4l2.833 8.718L12 18.576l-8.25 4.542L6.583 14.4.333 9.006h9.167z"></path>
+                            </svg>
+                            <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 .288l2.833 8.718h9.167L17.417 14.4l2.833 8.718L12 18.576l-8.25 4.542L6.583 14.4.333 9.006h9.167z"></path>
+                            </svg>
+
+                        </div>
+                        <p class="text-sm text-gray-600 mb-4">
+                            Dulu views mentok di ratusan, setelah ikut SYCA pertama kali pecah telor 600,000 views, dan setelah itu panen sampai Jutaan...
+                        </p>
+                        <a href="#" class="text-sm font-semibold text-teal-600">Lihat selanjutnya</a>
+                        
+                    <div class="bg-gray-100 w-[180px] h-[300px] rounded-md  mx-auto mt-2"></div>
+                    </div>
+                </div>
+                
+            </div>
+
+            
+            <button id="prev" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-2 border border-[#49B5A5]">
+                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+
+            
+            <button id="next" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-2 border border-[#49B5A5]">
+                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+       <div class="flex justify-center mt-6 px-4">
+            <button class="w-full max-w-[400px] bg-[#F2CF59] text-black font-semibold py-2 px-4 rounded-full mb-4 sm:max-w-[300px] md:max-w-[400px] lg:max-w-[500px]">
+                Ambil Penawaran Spesial! (Sisa < 9 slot)
+            </button>
+        </div>
+    </section>
+
+    <footer class="bg-[#282828] text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-between">
+            <div class="w-full sm:w-1/2 lg:w-1/3 mb-6 flex flex-col items-start">       
+                <div class="mb-4 flex items-start">
+                    <img src="assets/image2.png" alt="Logo" class="h-20">
+                </div> 
+                <p class="text-sm mb-4 whitespace-nowrap">Helping people build and grow their brand through social media content</p>
+                
+                <div class="text-sm">
+                    <p class="mb-2 font-semibold">WhatsApp: <a href="https://wa.me/1234567890" class="text-white hover:text-gray-400">123-456-7890</a></p>
+                    <p class="font-semibold">Email: <a href="mailto:email@example.com" class="text-white hover:text-gray-400">email@example.com</a></p>
+                </div>
+            </div>
+            
+            <div class="w-full sm:w-1/2 lg:w-1/3 flex flex-col items-start sm:items-end">
+                <p class="text-sm mb-4">Ikuti kami di sosial media</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white hover:text-gray-400 items-start">
+                        <img src="assets/ig.png" alt="Facebook" class="h-6">
+                    </a>
+                    <a href="#" class="text-white hover:text-gray-400">
+                        <img src="assets/tiktok.png" alt="Instagram" class="h-6">
+                    </a>
+                </div>
+
+                <p class="text-sm mb-4 mt-4">cara menggunakan: </p>
+                <p class="text-sm mb-4 ">Tutorial</p>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        const endDate = new Date().getTime() + 86400 * 1000; 
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = endDate - now;
+
+            if (distance <= 0) {
+                document.getElementById('hours').innerHTML = "00";
+                document.getElementById('minutes').innerHTML = "00";
+                document.getElementById('seconds').innerHTML = "00";
+                document.getElementById('hours-circle').style.strokeDashoffset = 283;
+                document.getElementById('minutes-circle').style.strokeDashoffset = 283;
+                document.getElementById('seconds-circle').style.strokeDashoffset = 283;
+                return;
+            }
+
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('hours').innerHTML = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerHTML = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerHTML = String(seconds).padStart(2, '0');
+
+            const totalSeconds = (endDate - now) / 1000;
+            const hoursProgress = (totalSeconds % (60 * 60 * 24)) / (60 * 60);
+            const minutesProgress = (totalSeconds % (60 * 60)) / 60;
+            const secondsProgress = totalSeconds % 60;
+
+            document.getElementById('hours-circle').style.strokeDashoffset = 283 - (hoursProgress / 24) * 283;
+            document.getElementById('minutes-circle').style.strokeDashoffset = 283 - (minutesProgress / 60) * 283;
+            document.getElementById('seconds-circle').style.strokeDashoffset = 283 - (secondsProgress / 60) * 283;
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown(); 
+
+        document.getElementById('next').addEventListener('click', () => {
+            document.getElementById('slider').scrollBy({
+                left: 300,
+                behavior: 'smooth'
+            });
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+            document.getElementById('slider').scrollBy({
+                left: -300,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+</body>
+</html>
